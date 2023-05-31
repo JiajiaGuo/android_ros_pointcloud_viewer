@@ -25,6 +25,12 @@ buildscript {
 apply plugin: "catkin"
 
 allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+
     group "org.ros.android_core"
     version = project.catkin.pkg.version
 }
@@ -78,3 +84,9 @@ configure(subprojects.findAll { it.name.startsWith("android_") }) {
 }
 
 defaultTasks 'assembleRelease', 'uploadArchives'
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+}
